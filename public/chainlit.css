@@ -1,0 +1,8 @@
+/* Chainlit Copilot Styling */
+#chainlit-copilot-chat {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.cl-text-input {
+  background-color: rgba(240, 240, 240, 0.8) !important;
+}
