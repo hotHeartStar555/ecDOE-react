@@ -4,6 +4,7 @@ import About from "./components/About"
 import Glossary from "./components/Glossary"
 import Feature from "./components/Features"
 import Footer from "./components/Footer"
+import AdminSec from "./components/AdminSec"
 
 import FakeLoader from "./components/FakeLoader"
 import Chatbot from "./components/Chatbot"
@@ -33,6 +34,9 @@ const App = () => {
 
         {/* Feature Component */}
         <Feature />
+
+        {/* Admin Sec */}
+        <AdminSec />
 
         {/* Footer Component */}
         <Footer />

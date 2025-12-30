@@ -3319,3 +3319,83 @@ body {
 .header-top {
   position: relative;
 }
+
+/* Admin Section */
+.admin_sec {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+}
+
+.admin_sec h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.charts_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.chart {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 400px;
+}
+.chart h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+/* Speaker icon effects */
+.word-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.speaker {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Hover effect: slight scale and color glow */
+.speaker:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 6px #4f46e5);
+}
+
+/* Optional: add focus effect for accessibility */
+.speaker:focus {
+  outline: none;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #3b82f6);
+}
+
+/* SVG color change on hover */
+.speaker svg path {
+  transition: fill 0.2s ease;
+}
+
+.speaker:hover svg path {
+  fill: #4f46e5;
+}
+
+.speaker:active {
+  transform: scale(0.95) rotate(-5deg);
+  filter: drop-shadow(0 0 4px #4f46e5);
+}
