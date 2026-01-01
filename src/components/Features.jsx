@@ -10,6 +10,45 @@ const Features = () => {
       script.src = "https://view.genially.com/static/embed/embed.js";
       document.body.appendChild(script);
     }
+
+    // Hide Genially watermarks dynamically
+    const hideGeniallyWatermarks = () => {
+      const watermarks = document.querySelectorAll('.Watermarkstyled__StyledWatermarkContainer-sc-11r3nbg-0');
+      if (watermarks.length > 0) {
+        watermarks.forEach(function(watermark) {
+          watermark.style.display = 'none';
+        });
+      } else {
+        setTimeout(hideGeniallyWatermarks, 500);
+      }
+    };
+
+    const runOnLoad = () => {
+      hideGeniallyWatermarks();
+      
+      const watermarkCheckInterval = setInterval(() => {
+        const watermarks = document.querySelectorAll('.Watermarkstyled__StyledWatermarkContainer-sc-11r3nbg-0');
+        if (watermarks.length > 0) {
+          watermarks.forEach(function(watermark) {
+            watermark.style.display = 'none';
+          });
+        }
+      }, 1000); // Check every second
+
+      return () => clearInterval(watermarkCheckInterval);
+    };
+
+    // Execute when DOM is loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', runOnLoad);
+    } else {
+      runOnLoad();
+    }
+
+    // Clean up event listener
+    return () => {
+      document.removeEventListener('DOMContentLoaded', runOnLoad);
+    };
   }, []);
 
   const GeniallyEmbed = ({ id, title }) => (
